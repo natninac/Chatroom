@@ -3,9 +3,13 @@ let express = require('express');
 const portNumber = 4200;
 let app = express(); //make an insatnce of express
 let httpServer = require('http').createServer(app);  // create a server (using the Express framework object)
+
  
 // declare io which mounts to our httpServer object (runs on top ... )
-let io = require('socket.io')(httpServer);
+const io = require('socket.io')(httpServer);
+io.on('connection', (socket) => {
+  require('./sockets/chat.js')(io, socket);
+});
 
 let clientIdIncrementing =0;
 let clientIds =[];
@@ -30,12 +34,17 @@ io.on('connect', function(socket){
        clientIds.push({id:clientIdIncrementing,socketId:socket.id});
     });
 
+  
+
    // when server receives this....
    socket.on('textData', function (data) {
     //send to everyone else
     console.log(data);
-    socket.broadcast.emit("dataFromServer",data);
-    //pass on
+    socket.broadcast.emit("dataFromServer", {
+      id: data.id,
+      data: data.data,
+      username: data.username
+    });
 
     document.querySelector("chatList").appendChild('textData');
 
@@ -60,10 +69,9 @@ app.get('/testPage', function(req, res) {
 });
 
 
-
-
 // make server listen for incoming messages
 httpServer.listen(portNumber, function(){
   console.log('listening on port:: '+portNumber);
 
 })
+
