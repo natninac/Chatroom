@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> SAMPLE EXPRESS PAGE</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="/socket.io/socket.io.js"></script>
+        <script src = "js/client.js"></script>
+        <!-- Three.js 3D library and loader -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script type="module" src="Main.js"></script>
+<script type="module" src="3Dmodel/3dmodel.js"></script>
+<script type="module" src="3Dmodel/PointerLockControls.js"></script>
+        <!-- <script src = "3Dmodel/3dmodel.js"></script> -->
+
+    
+    </head>
+    <body>
+        <header>
+            <h1>welcome to the free marketplace of ideas [▣🝙▣]</h1>
+            <h2>Nat+Junes </h2>
+        </header>
+        <!-- <main>
+            <div class = "odd"> 
+                <p>Text Container A </p>
+                <img src = "images/1.jpg"/> 
+            </div>
+            <div class = "even"> 
+                <p>Text Container B</p>
+            </div>
+        </main> -->
+        <div id="layout">
+       
+    
+
+            
+            <div id="container">   
+
+                <ul id= "chatList">
+                </ul>
+                <h3>  </h3>
+            </div>
+            <div id = "threedee">
+                <h3>use the arrow keys to move! use the mouse to look around! press escape to stop wandering!*  °•★|•°∵ ∵°•|☆•° .</h3>
+                </div>
+        </div>
+       
+        <div id = "forChat">
+            <label>Input Text:: </label ><input type = "text" id = "message" size="40"/>
+              <button id="sub">submit</button>
+            </div>
+              
+
+          </div>
+ 
+
+          
+    </body>
+</html>
