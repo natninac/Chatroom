@@ -10,7 +10,10 @@ body{
 }
 header{
     height:45px;
+    width: 100%;
     background-color:rgb(79, 79, 79);
+    position: relative;
+    cursor: move;
 
 }
 header h1{
@@ -18,12 +21,14 @@ header h1{
     color: white;
     font-size: 45px;
     text-align: left;
+    
 }
 header h2{
     float: right;
     color: white;
     font-size: 20px;
     text-align: right;
+   
     
 }
 
@@ -40,6 +45,8 @@ header h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    cursor: move;
   }
   
   #username-input{
@@ -132,6 +139,14 @@ h3{
         background: #000000;
         width: 1030px;
         box-sizing: border-box;
+        position: relative;
+        cursor: move;
+    }
+
+    #chatbox {
+        width:50%;
+        position: relative;
+        cursor: move;
     }
     
     #container {
@@ -139,6 +154,8 @@ h3{
         background-color: rgb(174, 174, 174);
         padding: 1rem;
         box-sizing: border-box;
+        position: relative;
+        cursor: move;
        
     }
     

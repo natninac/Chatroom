@@ -46,7 +46,6 @@ io.on('connect', function(socket){
       username: data.username
     });
 
-    document.querySelector("chatList").appendChild('textData');
 
   });
 
